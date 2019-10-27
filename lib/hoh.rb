@@ -4,33 +4,38 @@
 #
 # The tests will guide your construction.
 #
-# PORTION_1 = {
-#   label: "Kingdom",
-#   sub_category: {
-#     label: "Phylum",
-#     sub_category: {
-#       label: "Class"
-#     }
-#   }
-# }
-# 
-# PORTION_2 = {
-#   label: "Order"
-# }
-# 
-# PORTION_3 = {
-#   label: "Family",
-#   sub_category: {
-#     label: "Genus",
-#   }
-# }
-# 
-# PORTION_4 = {
-#   label: "Species",
-#   sub_category: nil
-# }
+ PORTION_1 = {
+   label: "Kingdom",
+   sub_category: {
+     label: "Phylum",
+     sub_category: {
+       label: "Class"
+     }
+   }
+ }
+ 
+ PORTION_2 = {
+   label: "Order"
+ }
+ 
+ PORTION_3 = {
+   label: "Family",
+   sub_category: {
+     label: "Genus",
+   }
+ }
+
+ PORTION_4 = {
+   label: "Species",
+   sub_category: nil
+ }
 
 def naming_system
+bio_array = PORTION_1
+bio_array[:sub_category][:sub_category][:sub_category] = PORTION_2
+bio_array[:sub_category][:sub_category][:sub_category][:sub_category] = PORTION_3
+bio_array[:sub_category][:sub_category][:sub_category][:sub_category][:sub_category][:sub_category] = PORTION_4
+  
   # Remember:
   #  Kingdom
   #  Phylum
@@ -41,5 +46,5 @@ def naming_system
   #  Species
   # So, if we have the "Kingdom" node we should be able to "tunnel" into the
   # HoH all the way to Species!
-
+bio_array
 end
