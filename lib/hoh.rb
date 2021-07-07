@@ -31,15 +31,35 @@
 # }
 
 def naming_system
-  # Remember:
-  #  Kingdom
-  #  Phylum
-  #  Class
-  #  Order
-  #  Family
-  #  Genus
-  #  Species
-  # So, if we have the "Kingdom" node we should be able to "tunnel" into the
-  # HoH all the way to Species!
+  family ={
+    :label => "family",
+    :sub_category => {
+      :label => "Genus",
+      :sub_category => {
+        :label => "Species",
+    :sub_category => nil
+      }
+    }
+  }
+  
+  order = {
+    :label => "Order",
+    :sub_category => family
+  }
+  
+  domain = {
+    :label => "Kingdom",
+    :sub_category => {
+      :label => "Phlum",
+      :sub_category => {
+        :label => "Class",
+        :sub_category => order 
+        
+      }
+      
+    }
+  }
+  
+  
 
 end
